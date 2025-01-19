@@ -1,0 +1,32 @@
+{
+  "drown-drown": "Player {0} drowned.",
+  "drown-fish": "Player {0} thought they where a fish.",
+  "drown-breath": "Player {0} tried to hold their breath for too long.",
+  "drown-forgot": "Player {0} forgot how to swim.",
+  "drown-discovered": "Player {0} discovered you can't breathe underwater.",
+  "drown-shore": "Player {0} didn't make it back to shore.",
+  "drown-rock": "Player {0} sank like a rock",
+  "drown-too-deep": "Player {0} went too deep and couldn't get back up in time.",
+
+  "suicide-enough": "Player {0} decided they'd had enough.",
+  "suicide-deleted": "Player {0} deleted themself.",
+  "suicide-endit": "Player {0} decided to end it all.",
+  "suicide-goodbye": "'Goodbye cruel world' ~Player {0}",
+
+  "internal-poison-bad-choice": "Player {0} ate something they shouldn't have.",
+  "internal-poison-poisoned": "Player {0} poisoned themself.",
+  "internal-poison-trust": "Player {0} trusted the wrong chef.",
+  "internal-poison-forgot": "Player {0} forgot to check the ingredients.",
+
+  "weather-frost-froze": "Player {0} froze to death.",
+  "weather-frost-icecube": "Player {0} became an ice cube.",
+  "weather-frost-icesculpture": "Player {0} became an ice sculpture.",
+  "weather-frost-underestimated": "Player {0} understimated the cold.",
+
+  "block-crushing-crushed": "Player {0} got crushed.",
+  "block-crushing-outoftheway": "Player {0} couldn't get out of the way in time.",
+  "block-crushing-burried": "Player {0} got burried alive.",
+  "block-crushing-wrong": "Player {0} stood in the wrong place at the wrong time.",
+  "block-crushing-sideways": "Player {0} looked sideways but not upward.",
+  "block-crushing-forgot": "Player {0} forgot that not all blocks float."
+}

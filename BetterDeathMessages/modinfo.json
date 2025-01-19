@@ -1,0 +1,13 @@
+{
+    "type": "code",
+    "modid": "betterdeathmessages",
+    "name": "Better Death Messages",
+    "authors": [
+        "TheInsanityGod"
+    ],
+    "description": "Better Death Messages",
+    "version": "0.1.0",
+    "dependencies": {
+        "game": ""
+    }
+}
