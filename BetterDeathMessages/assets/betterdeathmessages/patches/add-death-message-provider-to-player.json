@@ -1,0 +1,14 @@
+[
+  {
+    "file": "game:entities/humanoid/player.json",
+    "side": "Server",
+    "op": "addmerge",
+    "path": "/server/behaviors",
+    "value": [
+      {
+        "code": "BetterDeathMessages.DeathMessageProvider"
+      }
+    ]
+
+  }
+]

@@ -1,12 +1,9 @@
-﻿using System;
+﻿using BetterDeathMessages.Code.Behaviors;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
-using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 using Vintagestory.Server;
 
@@ -70,6 +67,17 @@ namespace BetterDeathMessages.Code
                     "sideways",
                     "forgot",
                 }
+            },
+            {
+                "dehydrate",
+                new()
+                {
+                    "dehydrated",
+                    "dried",
+                    "forgot",
+                    "diedrated",
+                    "find"
+                }
             }
 
         };
@@ -106,16 +114,35 @@ namespace BetterDeathMessages.Code
 
             if(src.Source == EnumDamageSource.Block && src.Type == EnumDamageType.Suffocation) src.Source = EnumDamageSource.Drown; //Game bug... this should be Drown
 
+            bool useCustom = false;
             var pool = GetPoolFor(src, out string poolName);
-            if(pool == null) return null;
+            
+            var provider = client.Entityplayer.GetBehavior<DeathMessageProvider>();
+            if (provider != null && !string.IsNullOrEmpty(provider.CustomDeathMessagePool))
+            {
+                poolName = provider.CustomDeathMessagePool;
+                useCustom = MessagePools.TryGetValue(poolName, out pool);
+            }
+            string messagecode = null;
 
-            var messagecode = $"betterdeathmessages:{poolName}-{pool[Random.Shared.Next(0, pool.Count - 1)]}";
+            if (pool != null)
+            {
+                messagecode = $"betterdeathmessages:{poolName}-{pool[Random.Shared.Next(0, pool.Count - 1)]}";
+            }
+
+            if (provider != null && !string.IsNullOrEmpty(provider.CustomDeathMessageCode))
+            {
+                useCustom = true;
+                messagecode = provider.CustomDeathMessageCode;
+            }
+
+            if(string.IsNullOrEmpty(messagecode)) return null;
 
             var langParams = new object[] { client.PlayerName };
             
-            if(src.CauseEntity != null)
+            if(src.CauseEntity != null && !useCustom)
             {
-                //TODO append message info
+                //TODO append entity info
             }
             
             var parsedMessage = Lang.GetL(client.Player.LanguageCode, messagecode, langParams);
