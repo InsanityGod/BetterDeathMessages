@@ -78,6 +78,16 @@ namespace BetterDeathMessages.Code
                     "diedrated",
                     "find"
                 }
+            },
+            {
+                "block-piercingattack",
+                new()
+                {
+                    "swiss-cheese",
+                    "impaled",
+                    "resist",
+                    "nail",
+                }
             }
 
         };

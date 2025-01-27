@@ -30,9 +30,15 @@
   "block-crushing-sideways": "Player {0} looked sideways but not upward.",
   "block-crushing-forgot": "Player {0} forgot that not all blocks float.",
 
-  "dehydrate-dehydrated": "Player {0} dehydrated",
-  "dehydrate-dried": "Player {0} dried out",
-  "dehydrate-forgot": "Player {0} forgot to bring water",
-  "dehydrate-find": "Player {0} couldn't find water",
-  "dehydrate-diedrated": "Player {0} diedrated"
+  "dehydrate-dehydrated": "Player {0} dehydrated.",
+  "dehydrate-dried": "Player {0} dried out.",
+  "dehydrate-forgot": "Player {0} forgot to bring water.",
+  "dehydrate-find": "Player {0} couldn't find water.",
+  "dehydrate-diedrated": "Player {0} diedrated.",
+
+
+  "block-piercingattack-swiss-cheese": "Player {0} was turned into swiss cheese.",
+  "block-piercingattack-impaled": "Player {0} was impaled.",
+  "block-piercingattack-resist":  "Player {0} couldn't' resist touching the pointy object.",
+  "block-piercingattack-nail":  "Player {0} stepped on a nail."
 }
