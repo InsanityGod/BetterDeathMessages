@@ -1,35 +1,39 @@
 ﻿using BetterDeathMessages.Code.Behaviors;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Vintagestory.API.Common;
 
-namespace BetterDeathMessages.Code
+namespace BetterDeathMessages.Code;
+
+public static class Extensions
 {
-    public static class Extensions
+    /// <summary>
+    /// Used to temporary override the pool of death messages (is automatically cleared after next damage is applied)
+    /// </summary>
+    public static void OverrideDeathMessagePool(this EntityPlayer entityPlayer, string poolIdentifier)
     {
-        public static void OverrideDeathMessagePool(this EntityPlayer entityPlayer, string pool)
+        var provider = entityPlayer.GetBehavior<DeathMessageProvider>();
+        if(provider == null)
         {
-            var provider = entityPlayer.GetBehavior<DeathMessageProvider>();
-            if(provider == null)
-            {
-                entityPlayer.Api?.Logger.Warning("Player does not have a DeathMessageProvider assigned? (BetterDeathMessages)");
-                return;
-            }
-            provider.CustomDeathMessagePool = pool;
+            entityPlayer.Api?.Logger.Warning("[BetterDeathMessages] Player does not have a DeathMessageProvider assigned?");
+            return;
         }
 
-        public static void OverrideDeathMessageCode(this EntityPlayer entityPlayer, string code)
+        var pool = DeathMessagePool.Pools.Find(pool => pool.PoolIdentifier == poolIdentifier);
+        if(pool is null) entityPlayer.Api?.Logger.Warning("[BetterDeathMessages] no pool with '{0}' as PoolIdentifier", poolIdentifier);
+
+        provider.CustomDeathMessagePool = pool;
+    }
+
+    /// <summary>
+    /// Used to temporary override the language string code of death messages (is automatically cleared after next damage is applied)
+    /// </summary>
+    public static void OverrideDeathMessageCode(this EntityPlayer entityPlayer, string code)
+    {
+        var provider = entityPlayer.GetBehavior<DeathMessageProvider>();
+        if(provider == null)
         {
-            var provider = entityPlayer.GetBehavior<DeathMessageProvider>();
-            if(provider == null)
-            {
-                entityPlayer.Api?.Logger.Warning("Player does not have a DeathMessageProvider assigned? (BetterDeathMessages)");
-                return;
-            }
-            provider.CustomDeathMessageCode = code;
+            entityPlayer.Api?.Logger.Warning("[BetterDeathMessages] Player does not have a DeathMessageProvider assigned?");
+            return;
         }
+        provider.CustomDeathMessageCode = code;
     }
 }
