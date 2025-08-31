@@ -1,5 +1,6 @@
 ﻿using BetterDeathMessages.Code.Behaviors;
 using BetterDeathMessages.Code.DeathMessageGeneration;
+using BetterDeathMessages.Code.DeathMessageGeneration.CustomPools;
 using System;
 using System.Collections.Generic;
 using Vintagestory.API.Common;
@@ -24,7 +25,7 @@ public partial class DeathMessagePool
         }
         if(applicablePools.Count == 0) return null;
 
-        return applicablePools[Random.Shared.Next(applicablePools.Count - 1)];
+        return applicablePools[Random.Shared.Next(applicablePools.Count)];
     }
 
     public static string GetMessageFor(ConnectedClient client, DamageSource src)
@@ -77,7 +78,7 @@ public partial class DeathMessagePool
             DamageSourceFilter = EnumDamageSource.Block,
             DamageTypeFilter = EnumDamageType.Crushing,
             BaseCode = "betterdeathmessages:block-crushing",
-            Length = 6
+            Length = 13
         },
         new DeathMessagePool {
             PoolIdentifier = "block-piercingattack",
@@ -92,5 +93,15 @@ public partial class DeathMessagePool
             BaseCode = "betterdeathmessages:dehydrate",
             Length = 5
         },
+        new SelfProjectileDeathMessagePool {
+            PoolIdentifier = "player-projectile-self",
+            BaseCode = "betterdeathmessages:player-projectile-self",
+            Length = 3
+        },
+        new ArrowDeathMessagePool {
+            PoolIdentifier = "arrow",
+            BaseCode = "betterdeathmessages:arrow",
+            Length = 3
+        }
     ];
 }

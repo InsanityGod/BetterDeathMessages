@@ -9,7 +9,7 @@ public class BetterDeathMessagesModSystem : ModSystem
 {
     private Harmony harmony;
 
-    public override bool ShouldLoad(EnumAppSide forSide) => forSide == EnumAppSide.Server;
+    public override bool ShouldLoad(EnumAppSide forSide) => forSide == EnumAppSide.Server; //TODO see if this mod is even needed client side and if not then fix modinfo.json
 
     public override void StartServerSide(ICoreServerAPI api)
     {

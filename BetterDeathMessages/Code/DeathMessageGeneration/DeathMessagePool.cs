@@ -38,7 +38,7 @@ public partial class DeathMessagePool : IDeathMessagePool
 
     public int Length { get; set; }
 
-    public bool IsApplicable(ConnectedClient client, DamageSource src)
+    public virtual bool IsApplicable(ConnectedClient client, DamageSource src)
     {
         if(ManualAssignmentOnly) return false;
         if(DamageSourceFilter is not null && DamageSourceFilter != src.Source) return false;
@@ -48,7 +48,7 @@ public partial class DeathMessagePool : IDeathMessagePool
         return true;
     }
 
-    public string GetRandomMessage(ConnectedClient client, DamageSource src)
+    public virtual string GetRandomMessage(ConnectedClient client, DamageSource src)
     {
         var code = $"{BaseCode}-{Random.Shared.Next(Length) + 1}";
         var parsedMessage = Lang.GetL(client.Player.LanguageCode, code, client.PlayerName);

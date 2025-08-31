@@ -29,6 +29,13 @@
   "block-crushing-4": "Player {0} stood in the wrong place at the wrong time.",
   "block-crushing-5": "Player {0} looked sideways but not upward.",
   "block-crushing-6": "Player {0} forgot that not all blocks float.",
+  "block-crushing-7": "Player {0} became a fossil.",
+  "block-crushing-8": "Player {0} forgot to add supports.",
+  "block-crushing-9": "Player {0} got buried under the weight of their own hubris.",
+  "block-crushing-10": "Player {0} was not living under the rock.",
+  "block-crushing-11": "Player {0} was caught in a landslide.",
+  "block-crushing-12": "Player {0} was lost to the earth.",
+  "block-crushing-13": "Player {0} did not pass the OSCHA inspection",
 
   "dehydrate-1": "Player {0} dehydrated.",
   "dehydrate-2": "Player {0} dried out.",
@@ -36,9 +43,16 @@
   "dehydrate-4": "Player {0} couldn't find water.",
   "dehydrate-5": "Player {0} diedrated.",
 
-
   "block-piercingattack-1": "Player {0} was turned into swiss cheese.",
   "block-piercingattack-2": "Player {0} was impaled.",
-  "block-piercingattack-3":  "Player {0} couldn't' resist touching the pointy object.",
-  "block-piercingattack-4":  "Player {0} stepped on a nail."
+  "block-piercingattack-3": "Player {0} couldn't' resist touching the pointy object.",
+  "block-piercingattack-4": "Player {0} stepped on a nail.",
+
+  "player-projectile-self-1": "Player {0} paid the ultimate price for not paying attention during physics class.",
+  "player-projectile-self-2": "Player {0} didn't realize that what goes up must come down.",
+  "player-projectile-self-3": "Player {0} forgot about gravity.",
+
+  "arrow-1": "Player {0} took an arrow to the knee.",
+  "arrow-2": "Player {0} got pierced by an arrow.",
+  "arrow-3": "Player {0} got shot in the head.",
 }
