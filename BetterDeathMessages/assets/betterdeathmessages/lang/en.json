@@ -21,7 +21,7 @@
   "weather-frost-1": "Player {0} froze to death.",
   "weather-frost-2": "Player {0} became an ice cube.",
   "weather-frost-3": "Player {0} became an ice sculpture.",
-  "weather-frost-4": "Player {0} understimated the cold.",
+  "weather-frost-4": "Player {0} underestimated the cold.",
 
   "block-crushing-1": "Player {0} got crushed.",
   "block-crushing-2": "Player {0} couldn't get out of the way in time.",
@@ -54,5 +54,5 @@
 
   "arrow-1": "Player {0} took an arrow to the knee.",
   "arrow-2": "Player {0} got pierced by an arrow.",
-  "arrow-3": "Player {0} got shot in the head.",
+  "arrow-3": "Player {0} got shot in the head."
 }
