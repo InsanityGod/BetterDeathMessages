@@ -1,4 +1,5 @@
 ﻿using Vintagestory.API.Common;
+using Vintagestory.API.Common.Entities;
 using Vintagestory.GameContent;
 using Vintagestory.Server;
 
@@ -11,6 +12,6 @@ public class SelfProjectileDeathMessagePool : DeathMessagePool
     {
         if(!base.IsApplicable(client, src)) return false;
         if(client.Entityplayer != src.CauseEntity) return false;
-        return src.SourceEntity is EntityProjectile or EntityThrownStone;
+        return src.SourceEntity is IProjectile;
     }
 }

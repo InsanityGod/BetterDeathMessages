@@ -4,11 +4,11 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Server;
 
 namespace BetterDeathMessages.Code;
-
+//TODO add a way to add custom injured by messages in damage log
 public class BetterDeathMessagesModSystem : ModSystem
 {
     private Harmony harmony;
-
+    
     public override bool ShouldLoad(EnumAppSide forSide) => forSide == EnumAppSide.Server; //TODO see if this mod is even needed client side and if not then fix modinfo.json
 
     public override void StartServerSide(ICoreServerAPI api)
